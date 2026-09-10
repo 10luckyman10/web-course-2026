@@ -1,5 +1,3 @@
-/* style.css — стили для резюме программиста */
-
 /* Глобальный сброс и box-sizing */
 * {
     margin: 0;
@@ -31,7 +29,7 @@ body {
     gap: 2.5rem;
 }
 
-/* ===== ШАПКА ===== */
+/* ШАПКА */
 .header {
     display: flex;
     flex-direction: column;
@@ -92,7 +90,7 @@ body {
     margin: 0.2rem 0 0 0;
 }
 
-/* ===== НАВИГАЦИЯ ===== */
+/* НАВИГАЦИЯ */
 .nav {
     display: flex;
     flex-direction: row;
@@ -118,7 +116,7 @@ body {
     border-bottom-color: #3b82f6;
 }
 
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+/* ОСНОВНОЕ*/
 .main {
     display: flex;
     flex-direction: column;
@@ -140,7 +138,7 @@ body {
     padding-left: 1rem;
 }
 
-/* ===== О СЕБЕ ===== */
+/* О СЕБЕ */
 .bio {
     display: flex;
     flex-direction: column;
@@ -153,7 +151,7 @@ body {
     color: #000000;
 }
 
-/* ===== ОБРАЗОВАНИЕ ===== */
+/* ОБРАЗОВАНИЕ */
 .edu-list {
     list-style: none;
     padding: 0;
@@ -188,7 +186,7 @@ body {
     white-space: nowrap;
 }
 
-/* ===== НАВЫКИ (пилюли) ===== */
+/* НАВЫКИ */
 .skills-wrap {
     display: flex;
     flex-direction: row;
@@ -217,7 +215,7 @@ body {
     transform: scale(1.02);
 }
 
-/* ===== ПОДВАЛ / КОНТАКТЫ ===== */
+/* ПОДВАЛ/КОНТАКТЫ */
 .footer {
     margin-top: 1rem;
     border-top: 1px solid #800079;
