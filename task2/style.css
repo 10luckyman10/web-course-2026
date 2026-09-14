@@ -1,0 +1,591 @@
+/* =========================================
+   MOBILE FIRST — базовые стили для <768px
+   ========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-bg: #1a1d22;
+    --color-bg-alt: #22262d;
+    --color-text: #ffffff;
+    --color-muted: #9aa0a6;
+    --color-accent: #e85a2a;
+    --color-border: rgba(255, 255, 255, 0.15);
+    --radius: 4px;
+    --transition: 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Отступ при прокрутке к якорю (чтобы шапка не перекрывала заголовок) */
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+/* ---------- ШАПКА ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(26, 29, 34, 0.95);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo::before {
+    content: "■ ";
+    color: var(--color-accent);
+}
+
+/* Меню скрыто на мобильном */
+.nav {
+    display: none;
+}
+
+/* Гамбургер */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 44px;
+    height: 44px;
+    padding: 12px 10px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: background-color var(--transition);
+}
+
+.burger:hover span {
+    background-color: var(--color-accent);
+}
+
+/* ---------- ГЕРОЙ ---------- */
+.hero {
+    position: relative;
+    padding: 60px 0 40px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+        url("pictures/hero.jpg") 30% center / cover no-repeat;
+}
+
+.hero__label {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.hero__title {
+    font-size: 56px;
+    line-height: 0.95;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.hero__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero__more {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 12px 0;
+    min-height: 44px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    transition: color var(--transition), transform var(--transition);
+}
+
+.hero__more:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* ---------- ЗАГОЛОВКИ СЕКЦИЙ ---------- */
+.section__label {
+    color: var(--color-muted);
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.section__title {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/* ---------- ТУРЫ ---------- */
+.tours {
+    padding: 50px 0;
+    background-color: var(--color-bg-alt);
+}
+
+.tours__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.tour {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.tour:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.tour__img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.tour__img--1 {
+    background-image: url("pictures/tour-1.jpg");
+}
+
+.tour__img--2 {
+    background-image: url("pictures/tour-2.jpg");
+}
+
+.tour__img--3 {
+    background-image: url("pictures/tour-3.jpg");
+}
+
+.tour__img--4 {
+    background-image: url("pictures/tour-4.jpg");
+}
+
+.tour__title {
+    padding: 16px 16px 4px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.tour__desc {
+    padding: 0 16px 16px;
+    color: var(--color-muted);
+    font-size: 13px;
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+    padding: 50px 0;
+    background-color: var(--color-bg);
+}
+
+.about__text {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ---------- INSPIRE (фото + текст) ---------- */
+.inspire {
+    padding: 60px 0;
+    background-color: var(--color-bg);
+}
+
+.inspire__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.inspire__media {
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.inspire__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.inspire__content {
+    padding: 10px 0;
+}
+
+.inspire__title {
+    font-size: 32px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.inspire__play {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    font-size: 14px;
+    color: #fff;
+    transition: color var(--transition);
+}
+
+.inspire__play:hover {
+    color: var(--color-accent);
+}
+
+.inspire__play-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    transition: border-color var(--transition);
+}
+
+.inspire__play:hover .inspire__play-icon {
+    border-color: var(--color-accent);
+}
+
+/* ---------- REVIEWS ---------- */
+.reviews {
+    padding: 50px 0;
+    background-color: var(--color-bg-alt);
+}
+
+.reviews__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.review {
+    padding: 20px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: transform var(--transition);
+}
+
+.review:hover {
+    transform: translateY(-4px);
+}
+
+.review__text {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.review__author {
+    font-size: 13px;
+    color: var(--color-muted);
+    font-style: normal;
+}
+
+/* ---------- ФОРМА ---------- */
+.contact {
+    padding: 50px 0;
+    background-color: var(--color-bg-alt);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.form__row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form__label {
+    font-size: 13px;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form__input {
+    min-height: 44px;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form__input--textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form__input::placeholder {
+    color: #6b7075;
+}
+
+.form__input:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(232, 90, 42, 0.25);
+}
+
+.btn {
+    min-height: 44px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+    background-color: #c94820;
+    transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ---------- ФУТЕР ---------- */
+.footer {
+    padding: 24px 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.footer__logo {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer__copy {
+    font-size: 12px;
+    color: var(--color-muted);
+}
+
+/* =========================================
+   TABLET: 768px — 1199px
+   ========================================= */
+@media (min-width: 768px) {
+
+    .container {
+        padding: 0 32px;
+    }
+
+    section[id] {
+        scroll-margin-top: 96px;
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .nav__list {
+        display: flex;
+        gap: 24px;
+    }
+
+    .nav__link {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-muted);
+        transition: color var(--transition);
+    }
+
+    .nav__link:hover {
+        color: var(--color-accent);
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .header__inner {
+        height: 80px;
+    }
+
+    .hero {
+        padding: 90px 0 60px;
+    }
+
+    .hero__title {
+        font-size: 80px;
+    }
+
+    .hero__bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .tours__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .inspire {
+        padding: 80px 0;
+    }
+
+    .inspire__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .inspire__title {
+        font-size: 38px;
+    }
+
+    .reviews__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__inner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* =========================================
+   DESKTOP: от 1200px
+   ========================================= */
+@media (min-width: 1200px) {
+
+    .hero {
+        padding: 120px 0 80px;
+    }
+
+    .hero__title {
+        font-size: 110px;
+    }
+
+    .tours__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .inspire {
+        padding: 120px 0;
+    }
+
+    .inspire__grid {
+        grid-template-columns: 1.1fr 1fr;
+        gap: 60px;
+    }
+
+    .inspire__title {
+        font-size: 56px;
+    }
+
+    .section__title {
+        font-size: 28px;
+    }
+
+    .reviews__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
