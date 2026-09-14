@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Tokyo — Travel Landing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ШАПКА -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="#top" class="logo">TRAVEL</a>
+
+            <nav class="nav" aria-label="Главное меню">
+                <ul class="nav__list">
+                    <li><a href="#top" class="nav__link">Главная</a></li>
+                    <li><a href="#about" class="nav__link">О нас</a></li>
+                    <li><a href="#tours" class="nav__link">Туры</a></li>
+                    <li><a href="#gallery" class="nav__link">Галерея</a></li>
+                    <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+                    <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger" type="button" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ГЕРОЙ-СЕКЦИЯ -->
+    <section class="hero" id="top">
+        <div class="container hero__inner">
+            <p class="hero__label">Япония</p>
+            <h1 class="hero__title">VISIT<br>TOKYO</h1>
+
+            <div class="hero__bottom">
+                <a href="#tours" class="hero__more">подробнее →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОПУЛЯРНЫЕ ТУРЫ -->
+    <section class="tours" id="tours">
+        <div class="container">
+            <p class="section__label">Получите незабываемые эмоции</p>
+            <h2 class="section__title">ПОПУЛЯРНЫЕ ТУРЫ</h2>
+
+            <div class="tours__grid">
+                <article class="tour">
+                    <div class="tour__img tour__img--1"></div>
+                    <h3 class="tour__title">ТУР №1</h3>
+                </article>
+
+                <article class="tour">
+                    <div class="tour__img tour__img--2"></div>
+                    <h3 class="tour__title">ТУР №2</h3>
+                </article>
+
+                <article class="tour">
+                    <div class="tour__img tour__img--3"></div>
+                    <h3 class="tour__title">ТУР №3</h3>
+                </article>
+
+                <article class="tour">
+                    <div class="tour__img tour__img--4"></div>
+                    <h3 class="tour__title">ТУР №4</h3>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- О НАС -->
+    <section class="about" id="about">
+        <div class="container">
+            <p class="section__label">мы — команда путешественников</p>
+            <h2 class="section__title">О НАС</h2>
+            <p class="about__text">
+                Мы организуем авторские туры по Японии с 2015 года.
+                Поможем увидеть страну за пределами путеводителей: старинные храмы,
+                горные тропы, неоновые кварталы Токио и тихие чайные дома Киото.
+            </p>
+        </div>
+    </section>
+
+    <!-- БЛОК С ФОТО / ГАЛЕРЕЯ -->
+    <section class="inspire" id="gallery">
+        <div class="container inspire__grid">
+
+            <!-- ЛЕВАЯ КОЛОНКА: фото -->
+            <div class="inspire__media">
+                <img class="inspire__img" src="pictures/inspire.jpg" alt="Горы под звёздным небом">
+            </div>
+
+            <!-- ПРАВАЯ КОЛОНКА: текст -->
+            <div class="inspire__content">
+                <h2 class="inspire__title">TRAVEL AND<br>INSPIRE YOUR<br>LIFE</h2>
+                <a href="https://youtu.be/yrGBH6ICN2w?si=9Ix3NQ-yg45V_VvU" class="inspire__play" target="_blank"
+                    rel="noopener noreferrer">
+                    <span class="inspire__play-icon">▶</span>
+                    Смотреть видео
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <p class="section__label">Что говорят наши путешественники</p>
+            <h2 class="section__title">ОТЗЫВЫ</h2>
+
+            <div class="reviews__grid">
+                <blockquote class="review">
+                    <p class="review__text">«Незабываемая поездка! Всё продумано до мелочей.»</p>
+                    <cite class="review__author">— Анна, Москва</cite>
+                </blockquote>
+
+                <blockquote class="review">
+                    <p class="review__text">«Токио открылся с новой стороны. Обязательно вернёмся.»</p>
+                    <cite class="review__author">— Игорь, Минск</cite>
+                </blockquote>
+
+                <blockquote class="review">
+                    <p class="review__text">«Лучший тур в моей жизни. Спасибо команде!»</p>
+                    <cite class="review__author">— Мария, Санкт-Петербург</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФОРМА / КОНТАКТЫ -->
+    <section class="contact" id="contacts">
+        <div class="container">
+            <h2 class="section__title">ОСТАВИТЬ ЗАЯВКУ</h2>
+
+            <form class="form" action="#" method="post">
+                <div class="form__row">
+                    <label class="form__label" for="name">Имя</label>
+                    <input class="form__input" type="text" id="name" name="name" placeholder="Ваше имя" required>
+                </div>
+
+                <div class="form__row">
+                    <label class="form__label" for="email">Email</label>
+                    <input class="form__input" type="email" id="email" name="email" placeholder="you@example.com"
+                        required>
+                </div>
+
+                <div class="form__row">
+                    <label class="form__label" for="message">Сообщение</label>
+                    <textarea class="form__input form__input--textarea" id="message" name="message"
+                        placeholder="Ваше сообщение" rows="4" required></textarea>
+                </div>
+
+                <button class="btn" type="submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="container footer__inner">
+
+            <div class="footer__brand">
+                <p class="footer__logo">TRAVEL</p>
+                <p class="footer__copy">© 2026 Visit Tokyo. Все права защищены.</p>
+            </div>
+
+            <address class="footer__contacts">
+                <a href="tel:+375291234567" class="footer__contact">
+                    <span class="footer__contact-icon" aria-hidden="true">☎</span>
+                    +375 (29) 123-45-67
+                </a>
+                <a href="mailto:hello@visittokyo.by" class="footer__contact">
+                    <span class="footer__contact-icon" aria-hidden="true">✉</span>
+                    hello@visittokyo.by
+                </a>
+            </address>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
