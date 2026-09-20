@@ -1,4 +1,6 @@
-/* MOBILE FIRST — базовые стили для <768px */
+/* =========================================
+   MOBILE FIRST — базовые стили для <768px
+   ========================================= */
 
 *,
 *::before,
@@ -51,7 +53,7 @@ ul {
     padding: 0 20px;
 }
 
-/* Отступ при прокрутке к якорю (чтобы шапка не перекрывала заголовок) */
+/* Отступ при прокрутке к якорю, чтобы шапка не перекрывала заголовок */
 section[id] {
     scroll-margin-top: 80px;
 }
@@ -227,15 +229,9 @@ section[id] {
 }
 
 .tour__title {
-    padding: 16px 16px 4px;
+    padding: 16px;
     font-size: 16px;
     text-transform: uppercase;
-}
-
-.tour__desc {
-    padding: 0 16px 16px;
-    color: var(--color-muted);
-    font-size: 13px;
 }
 
 /* ---------- ABOUT ---------- */
@@ -442,7 +438,7 @@ section[id] {
 
 /* ---------- ФУТЕР ---------- */
 .footer {
-    padding: 24px 0;
+    padding: 32px 0;
     border-top: 1px solid var(--color-border);
 }
 
@@ -450,13 +446,20 @@ section[id] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
     text-align: center;
+}
+
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .footer__logo {
     font-weight: 700;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .footer__copy {
@@ -464,7 +467,42 @@ section[id] {
     color: var(--color-muted);
 }
 
-/* TABLET: 768px — 1199px */
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-style: normal;
+}
+
+.footer__contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 4px 0;
+    font-size: 14px;
+    color: var(--color-muted);
+    transition: color var(--transition);
+}
+
+.footer__contact:hover {
+    color: var(--color-accent);
+}
+
+.footer__contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    color: var(--color-accent);
+}
+
+/* =========================================
+   TABLET: 768px — 1199px
+   ========================================= */
 @media (min-width: 768px) {
 
     .container {
@@ -543,6 +581,12 @@ section[id] {
     .footer__inner {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer__contacts {
+        align-items: flex-end;
     }
 }
 
