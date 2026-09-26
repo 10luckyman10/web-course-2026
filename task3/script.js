@@ -1,4 +1,4 @@
-// Массив задач — единственный источник данных
+// Массив задач 
 let tasks = [];
 let nextId = 1;
 let currentFilter = 'all';
@@ -22,7 +22,7 @@ function addTask(text) {
 }
 
 form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Enter в input тоже отправляет форму
+    e.preventDefault(); // Enter 
     addTask(input.value);
     input.value = '';
     input.focus();
@@ -55,15 +55,15 @@ function getVisibleTasks() {
     if (currentFilter === 'completed') {
         return tasks.filter(function (t) { return t.completed; });
     }
-    return tasks; // 'all'
+    return tasks;
 }
 
 // --- Рендер ---
 function render() {
-    // 1. Очищаем список
+    // 1. Очищает список
     list.innerHTML = '';
 
-    // 2. Рисуем видимые задачи через map
+    // 2. Рисует видимые задачи через map
     const visible = getVisibleTasks();
     const items = visible.map(function (task) {
         const li = document.createElement('li');
@@ -97,7 +97,7 @@ function render() {
         list.appendChild(li);
     });
 
-    // 3. Счётчик (по всем задачам, не только видимым)
+    // 3. Счётчик (по всем задачам)
     const done = tasks.filter(function (t) { return t.completed; }).length;
     const left = tasks.length - done;
     counter.textContent = 'Осталось: ' + left + ', Выполнено: ' + done;
