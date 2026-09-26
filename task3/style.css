@@ -12,16 +12,13 @@ body {
     padding: 16px;
     display: flex;
     justify-content: center;
-    /* только по горизонтали */
     align-items: flex-start;
-    /* прижато к верху, если контент длинный */
 }
 
 .app {
     width: 100%;
     max-width: 500px;
     margin: auto;
-    /* ← вот это центрирует и по вертикали, и позволяет расти вниз */
     background: #ffffff;
     border-radius: 18px;
     padding: 24px;
@@ -163,7 +160,7 @@ h1 {
 
 .task-item.completed .task-text {
     text-decoration: line-through;
-    opacity: 0.55;
+    opacity: 0.6;
 }
 
 .delete-btn {
