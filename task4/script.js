@@ -1,10 +1,10 @@
-// --- Состояние приложения ---
+const LENGTH = 4;
+
 let secretNumber = [];
 let attempts = 0;
 let history = [];
 let isGameOver = false;
 
-// --- DOM элементы ---
 const guessInput = document.getElementById('guessInput');
 const checkBtn = document.getElementById('checkBtn');
 const newGameBtn = document.getElementById('newGameBtn');
@@ -12,14 +12,9 @@ const messageEl = document.getElementById('message');
 const attemptsCountEl = document.getElementById('attemptsCount');
 const historyListEl = document.getElementById('historyList');
 
-// --- Функции логики ---
-
-/**
- * Генерирует массив из 4 уникальных случайных цифр от 0 до 9
- */
 function generateSecretNumber() {
     const digits = [];
-    while (digits.length < 4) {
+    while (digits.length < LENGTH) {
         const randomDigit = Math.floor(Math.random() * 10);
         if (!digits.includes(randomDigit)) {
             digits.push(randomDigit);
@@ -28,32 +23,26 @@ function generateSecretNumber() {
     return digits;
 }
 
-/**
- * Проверяет корректность ввода.
- */
 function validateInput(inputString) {
-    if (inputString.length !== 4) {
-        return { isValid: false, error: 'Нужно ввести ровно 4 цифры.' };
+    if (inputString.length !== LENGTH) {
+        return { isValid: false, error: `Нужно ввести ровно ${LENGTH} цифры.` };
     }
     if (!/^\d+$/.test(inputString)) {
         return { isValid: false, error: 'Можно вводить только цифры.' };
     }
     const digits = inputString.split('').map(Number);
     const uniqueDigits = new Set(digits);
-    if (uniqueDigits.size !== 4) {
+    if (uniqueDigits.size !== LENGTH) {
         return { isValid: false, error: 'Цифры не должны повторяться.' };
     }
     return { isValid: true, error: '', digits: digits };
 }
 
-/**
- * Считает быков и коров.
- */
 function countBullsAndCows(secret, guess) {
     let bulls = 0;
     let cows = 0;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < LENGTH; i++) {
         if (guess[i] === secret[i]) {
             bulls++;
         } else if (secret.includes(guess[i])) {
@@ -63,13 +52,9 @@ function countBullsAndCows(secret, guess) {
     return { bulls, cows };
 }
 
-// --- Функции отрисовки (Render) ---
 
-/**
- * Перерисовывает список истории из массива history
- */
 function renderHistory() {
-    historyListEl.innerHTML = ''; // Очищаем список
+    historyListEl.innerHTML = '';
 
     history.forEach(item => {
         const li = document.createElement('li');
@@ -77,20 +62,13 @@ function renderHistory() {
         historyListEl.appendChild(li);
     });
 
-    // АВТОСКРОЛЛ: Прокручиваем список в самый низ
     historyListEl.scrollTop = historyListEl.scrollHeight;
 }
 
-/**
- * Обновляет счетчик попыток на экране
- */
 function updateAttemptsDisplay() {
     attemptsCountEl.textContent = attempts;
 }
 
-/**
- * Выводит сообщение пользователю
- */
 function showMessage(text, isError = false, isSuccess = false) {
     messageEl.textContent = text;
     messageEl.className = 'message';
@@ -98,11 +76,7 @@ function showMessage(text, isError = false, isSuccess = false) {
     if (isSuccess) messageEl.classList.add('success');
 }
 
-// --- Основные обработчики ---
 
-/**
- * Обработка нажатия кнопки "Проверить"
- */
 function handleCheck() {
     if (isGameOver) return;
 
@@ -132,7 +106,7 @@ function handleCheck() {
     guessInput.value = '';
     guessInput.focus();
 
-    if (result.bulls === 4) {
+    if (result.bulls === LENGTH) {
         isGameOver = true;
         showMessage(`Победа! Угадано за ${attempts} попыток`, false, true);
         guessInput.disabled = true;
@@ -140,9 +114,6 @@ function handleCheck() {
     }
 }
 
-/**
- * Сброс состояния и начало новой игры
- */
 function startNewGame() {
     secretNumber = generateSecretNumber();
     attempts = 0;
@@ -158,7 +129,6 @@ function startNewGame() {
     guessInput.focus();
 }
 
-// --- Инициализация и слушатели событий ---
 
 checkBtn.addEventListener('click', handleCheck);
 newGameBtn.addEventListener('click', startNewGame);
