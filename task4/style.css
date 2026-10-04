@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background: #0f1419;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #c9d1d9;
+}
+
+.game-container {
+    background: #1a2129;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    max-width: 440px;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #58a6ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Блок управления */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    text-align: center;
+    color: #c9d1d9;
+    background: #0f1419;
+    border: 1px solid #2d3748;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input:focus {
+    border-color: #58a6ff;
+}
+
+input:disabled {
+    color: #4a5568;
+    cursor: not-allowed;
+}
+
+input::placeholder {
+    letter-spacing: normal;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Кнопки */
+button {
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    border: 1px solid;
+}
+
+#checkBtn {
+    background: #58a6ff;
+    color: #0f1419;
+    border-color: #58a6ff;
+}
+
+#checkBtn:hover:not(:disabled) {
+    background: #79b8ff;
+    border-color: #79b8ff;
+}
+
+#newGameBtn {
+    background: transparent;
+    color: #58a6ff;
+    border-color: #2d3748;
+}
+
+#newGameBtn:hover {
+    border-color: #58a6ff;
+}
+
+button:disabled {
+    background: #2d3748 !important;
+    color: #4a5568 !important;
+    border-color: #2d3748 !important;
+    cursor: not-allowed;
+}
+
+/* Сообщения */
+.message {
+    min-height: 22px;
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.error {
+    color: #f85149;
+}
+
+.success {
+    color: #3fb950;
+    font-size: 15px;
+    padding: 10px;
+    background: rgba(63, 185, 80, 0.1);
+    border: 1px solid rgba(63, 185, 80, 0.3);
+    border-radius: 6px;
+}
+
+/* Счетчик попыток */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: #0f1419;
+    border: 1px solid #2d3748;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#attemptsCount {
+    font-weight: 700;
+    color: #58a6ff;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+/* Заголовок истории */
+h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8b949e;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Список истории */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #0f1419;
+    border: 1px solid #2d3748;
+    border-radius: 6px;
+    scroll-behavior: smooth;
+}
+
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: #0f1419;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #2d3748;
+    border-radius: 3px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: #4a5568;
+}
+
+li {
+    padding: 10px 14px;
+    border-bottom: 1px solid #1f2933;
+    font-size: 14px;
+    color: #c9d1d9;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Пустая история */
+ul:empty::after {
+    content: "нет попыток";
+    display: block;
+    padding: 20px;
+    text-align: center;
+    color: #4a5568;
+    font-size: 13px;
+    font-style: italic;
+}
