@@ -36,7 +36,6 @@ h1 {
     text-align: center;
 }
 
-/* Блок управления */
 .controls {
     display: flex;
     flex-direction: column;
@@ -76,7 +75,6 @@ input::placeholder {
     font-weight: 400;
 }
 
-/* Кнопки */
 button {
     padding: 12px 18px;
     font-family: inherit;
@@ -118,7 +116,6 @@ button:disabled {
     cursor: not-allowed;
 }
 
-/* Сообщения */
 .message {
     min-height: 22px;
     margin: 10px 0;
@@ -139,7 +136,6 @@ button:disabled {
     border-radius: 6px;
 }
 
-/* Счетчик попыток */
 .stats {
     display: flex;
     justify-content: space-between;
@@ -162,7 +158,6 @@ button:disabled {
     letter-spacing: 0;
 }
 
-/* Заголовок истории */
 h3 {
     font-size: 12px;
     font-weight: 600;
@@ -172,7 +167,6 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* Список истории */
 ul {
     list-style: none;
     padding: 0;
@@ -213,7 +207,6 @@ li:last-child {
     border-bottom: none;
 }
 
-/* Пустая история */
 ul:empty::after {
     content: "нет попыток";
     display: block;
