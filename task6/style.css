@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #1b1f24;
+    color: #e7ecf3;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 24px;
+}
+
+.game__title {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.game__hud {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+.game__score b {
+    color: #7fd67f;
+}
+
+.game__status {
+    color: #9aa4b2;
+    font-size: 14px;
+}
+
+.game__field {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+canvas {
+    display: block;
+    background: #0f1317;
+    touch-action: none;
+    image-rendering: pixelated;
+}
+
+.game__controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.btn--primary {
+    background: #3ea34a;
+    color: #fff;
+}
+
+.btn--ghost {
+    background: transparent;
+    color: #c7d0db;
+    border: 1px solid #3a424d;
+}
+
+.game__hint {
+    margin: 0;
+    font-size: 13px;
+    color: #7b8592;
+}
