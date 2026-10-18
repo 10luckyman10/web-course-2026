@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Змейка</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="game">
+        <h1 class="game__title">Змейка</h1>
+
+        <div class="game__hud">
+            <span class="game__score">Счёт: <b id="score">0</b></span>
+            <span class="game__status" id="status">Нажмите «Старт»</span>
+        </div>
+
+        <div class="game__field">
+            <canvas id="board" width="600" height="600"></canvas>
+        </div>
+
+        <div class="game__controls">
+            <button type="button" id="startBtn" class="btn btn--primary">Старт</button>
+            <button type="button" id="restartBtn" class="btn btn--ghost" disabled>Начать заново</button>
+        </div>
+
+        <p class="game__hint">Управление: стрелки ← ↑ → ↓</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
