@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    color: #222;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+#search {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.card p {
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.card .author {
+    font-size: 13px;
+    color: #777;
+}
+
+.message {
+    text-align: center;
+    color: #666;
+    padding: 15px;
+}
+
+.error {
+    text-align: center;
+    background: #ffe5e5;
+    color: #b00020;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.error button {
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
