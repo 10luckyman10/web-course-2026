@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лента постов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Лента постов</h1>
+        <input type="text" id="search" placeholder="Поиск по заголовку...">
+    </header>
+
+    <main>
+        <div id="posts"></div>
+
+        <p id="empty" class="message" hidden>Ничего не найдено</p>
+        <p id="loader" class="message" hidden>Загрузка…</p>
+        <div id="error" class="error" hidden>
+            <p id="error-text"></p>
+            <button id="retry">Повторить</button>
+        </div>
+        <p id="end" class="message" hidden>Больше постов нет</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
