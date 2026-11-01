@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zen-Money</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Zen-Money</h1>
+    <button id="theme-btn" type="button">Сменить тему</button>
+  </header>
+
+  <main>
+    <p id="message" class="message" hidden></p>
+
+    <!-- Итоговая сводка -->
+    <section class="card summary">
+      <span>Доходы: <b id="sum-income" class="income">0</b></span>
+      <span>Расходы: <b id="sum-expense" class="expense">0</b></span>
+      <span>Баланс: <b id="sum-balance">0</b></span>
+    </section>
+
+    <!-- Форма операции -->
+    <section class="card">
+      <h2 id="form-title">Новая операция</h2>
+      <form id="transaction-form" novalidate>
+        <input type="hidden" name="transactionId">
+
+        <div class="field">
+          <label>Тип</label>
+          <div class="radios">
+            <label><input type="radio" name="type" value="expense" checked> Расход</label>
+            <label><input type="radio" name="type" value="income"> Доход</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="amount">Сумма</label>
+          <input id="amount" name="amount" type="number" step="0.01">
+          <span class="error" data-error-for="amount"></span>
+        </div>
+
+        <div class="field">
+          <label for="categoryId">Категория</label>
+          <select id="categoryId" name="categoryId"></select>
+          <span class="error" data-error-for="categoryId"></span>
+        </div>
+
+        <div class="field">
+          <label for="date">Дата</label>
+          <input id="date" name="date" type="date">
+          <span class="error" data-error-for="date"></span>
+        </div>
+
+        <div class="field">
+          <label for="comment">Комментарий</label>
+          <input id="comment" name="comment" type="text">
+        </div>
+
+        <button id="submit-btn" type="submit">Добавить</button>
+        <button id="cancel-btn" type="button" hidden>Отмена</button>
+      </form>
+    </section>
+
+    <!-- Форма новой категории -->
+    <section class="card">
+      <h2>Новая категория</h2>
+      <form id="category-form" novalidate>
+        <div class="field">
+          <label for="cat-name">Название</label>
+          <input id="cat-name" name="name" type="text">
+          <span class="error" data-error-for="name"></span>
+        </div>
+        <div class="field">
+          <label for="cat-type">Тип</label>
+          <select id="cat-type" name="type">
+            <option value="expense">Расход</option>
+            <option value="income">Доход</option>
+          </select>
+        </div>
+        <button type="submit">Создать категорию</button>
+      </form>
+    </section>
+
+    <!-- Фильтры -->
+    <section class="card">
+      <h2>Фильтры</h2>
+      <form id="filters">
+        <select name="type">
+          <option value="all">Все операции</option>
+          <option value="income">Только доходы</option>
+          <option value="expense">Только расходы</option>
+        </select>
+        <select name="categoryId"></select>
+        <label>с <input type="date" name="from"></label>
+        <label>по <input type="date" name="to"></label>
+        <button id="reset-filters-btn" type="button">Сбросить</button>
+      </form>
+    </section>
+
+    <!-- Список операций -->
+    <section class="card">
+      <h2>Операции</h2>
+      <table>
+        <thead>
+          <tr><th>Дата</th><th>Категория</th><th>Сумма</th><th>Комментарий</th><th></th></tr>
+        </thead>
+        <tbody id="transactions-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
