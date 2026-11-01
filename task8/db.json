@@ -1,0 +1,66 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "type": "income",
+      "amount": 45000,
+      "categoryId": "2",
+      "date": "2026-10-05",
+      "comment": "Зарплата за сентябрь"
+    },
+    {
+      "id": 2,
+      "type": "expense",
+      "amount": 850,
+      "categoryId": "1",
+      "date": "2026-10-07",
+      "comment": "Продукты"
+    },
+    {
+      "id": 3,
+      "type": "expense",
+      "amount": 120,
+      "categoryId": "3",
+      "date": "2026-10-09",
+      "comment": "Проездной"
+    },
+    {
+      "id": 4,
+      "type": "income",
+      "amount": 5000,
+      "categoryId": "4",
+      "date": "2026-10-15",
+      "comment": "Репетиторство"
+    },
+    {
+      "id": 5,
+      "type": "expense",
+      "amount": 2300,
+      "categoryId": "1",
+      "date": "2026-10-20",
+      "comment": "Кафе с друзьями"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Еда",
+      "type": "expense"
+    },
+    {
+      "id": 2,
+      "name": "Зарплата",
+      "type": "income"
+    },
+    {
+      "id": 3,
+      "name": "Транспорт",
+      "type": "expense"
+    },
+    {
+      "id": 4,
+      "name": "Подработка",
+      "type": "income"
+    }
+  ]
+}
