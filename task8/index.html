@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zen-Money</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <h1>Zen-Money</h1>
@@ -15,14 +17,12 @@
   <main>
     <p id="message" class="message" hidden></p>
 
-    <!-- Итоговая сводка -->
     <section class="card summary">
       <span>Доходы: <b id="sum-income" class="income">0</b></span>
       <span>Расходы: <b id="sum-expense" class="expense">0</b></span>
       <span>Баланс: <b id="sum-balance">0</b></span>
     </section>
 
-    <!-- Форма операции -->
     <section class="card">
       <h2 id="form-title">Новая операция</h2>
       <form id="transaction-form" novalidate>
@@ -64,7 +64,6 @@
       </form>
     </section>
 
-    <!-- Форма новой категории -->
     <section class="card">
       <h2>Новая категория</h2>
       <form id="category-form" novalidate>
@@ -84,7 +83,6 @@
       </form>
     </section>
 
-    <!-- Фильтры -->
     <section class="card">
       <h2>Фильтры</h2>
       <form id="filters">
@@ -100,12 +98,17 @@
       </form>
     </section>
 
-    <!-- Список операций -->
     <section class="card">
       <h2>Операции</h2>
       <table>
         <thead>
-          <tr><th>Дата</th><th>Категория</th><th>Сумма</th><th>Комментарий</th><th></th></tr>
+          <tr>
+            <th>Дата</th>
+            <th>Категория</th>
+            <th>Сумма</th>
+            <th>Комментарий</th>
+            <th></th>
+          </tr>
         </thead>
         <tbody id="transactions-body"></tbody>
       </table>
@@ -114,4 +117,5 @@
 
   <script type="module" src="main.js"></script>
 </body>
+
 </html>

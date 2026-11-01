@@ -1,4 +1,3 @@
-// Хранилище ПОЛЬЗОВАТЕЛЬСКИХ НАСТРОЕК в localStorage (операции здесь не хранятся!).
 export class SettingsStorage {
   constructor(storage) {
     this.storage = storage;

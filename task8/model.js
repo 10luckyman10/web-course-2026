@@ -1,8 +1,5 @@
-// MODEL: хранит данные приложения и бизнес-логику (фильтрация, подсчёт, валидация).
-// Ничего не знает про DOM.
 import * as api from './api.js';
 
-// Валидация операции. Возвращает объект ошибок (пустой — значит всё хорошо).
 export function validateTransaction(data) {
   const errors = {};
   const amount = Number(data.amount);
@@ -19,7 +16,6 @@ export function validateTransaction(data) {
   return errors;
 }
 
-// Валидация новой категории.
 export function validateCategory(data) {
   const errors = {};
   if (!data.name.trim()) {
@@ -35,7 +31,6 @@ export class Model {
     this.filter = { type: 'all', categoryId: '', from: '', to: '' };
   }
 
-  // ---------- работа с сервером ----------
   async load() {
     this.transactions = await api.getTransactions();
     this.categories = await api.getCategories();
@@ -63,7 +58,6 @@ export class Model {
     this.categories.push(created);
   }
 
-  // Приводим данные формы к виду, который хранится на сервере.
   prepare(data) {
     return {
       type: data.type,
@@ -74,7 +68,6 @@ export class Model {
     };
   }
 
-  // ---------- чтение данных ----------
   getTransaction(id) {
     return this.transactions.find((t) => String(t.id) === String(id));
   }
@@ -103,7 +96,6 @@ export class Model {
       .sort((a, b) => b.date.localeCompare(a.date));
   }
 
-  // Сводка считается по ВСЕМ загруженным операциям (как в задании).
   getSummary() {
     let income = 0;
     let expense = 0;

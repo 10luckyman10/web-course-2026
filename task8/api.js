@@ -1,6 +1,3 @@
-// СЛОЙ ДОСТУПА К ДАННЫМ: только общение с json-server, никакой логики интерфейса.
-
-// Общая функция запроса. Адрес сервера хранится внутри функции (без глобальных переменных).
 async function request(path, method = 'GET', data = null) {
   const baseUrl = 'http://localhost:3001';
   const options = { method };

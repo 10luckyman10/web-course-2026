@@ -1,4 +1,3 @@
-// CONTROLLER: связывает Model и View, обрабатывает действия пользователя.
 import { Model, validateTransaction, validateCategory } from './model.js';
 import { View } from './ui.js';
 import { SettingsStorage } from './settings.js';
@@ -8,7 +7,7 @@ class Controller {
     this.model = model;
     this.view = view;
     this.settingsStorage = settingsStorage;
-    this.settings = settingsStorage.load(); // тема и фильтр
+    this.settings = settingsStorage.load();
   }
 
   async init() {
@@ -25,7 +24,7 @@ class Controller {
     }
 
     this.renderCategories();
-    this.view.setFilter(this.model.filter); // восстанавливаем фильтр после перезагрузки
+    this.view.setFilter(this.model.filter);
     this.render();
   }
 
@@ -40,7 +39,6 @@ class Controller {
     this.view.bindThemeToggle(() => this.handleThemeToggle());
   }
 
-  // ---------- отрисовка ----------
   render() {
     this.view.renderSummary(this.model.getSummary());
     this.view.renderTransactions(
@@ -60,7 +58,6 @@ class Controller {
     this.renderCategories();
   }
 
-  // ---------- обработчики ----------
   async handleTransactionSubmit(data) {
     const errors = validateTransaction(data);
     if (Object.keys(errors).length > 0) {
@@ -134,7 +131,6 @@ class Controller {
   }
 }
 
-// Точка входа: собираем слои вместе (все объекты живут внутри функции, не в глобальной области).
 function start() {
   const model = new Model();
   const view = new View(document);

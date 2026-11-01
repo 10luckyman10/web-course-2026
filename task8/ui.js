@@ -1,4 +1,3 @@
-// VIEW: отрисовка и работа с DOM. Данные не хранит и с сервером не общается.
 export class View {
   constructor(doc) {
     this.doc = doc;
@@ -15,7 +14,6 @@ export class View {
     this.resetFiltersButton = doc.getElementById('reset-filters-btn');
   }
 
-  // ---------- подписки на события (передаём наружу обработчики контроллера) ----------
   bindTransactionSubmit(handler) {
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -60,7 +58,6 @@ export class View {
     this.themeButton.addEventListener('click', handler);
   }
 
-  // ---------- чтение значений из форм ----------
   getFormData() {
     const f = this.form.elements;
     return {
@@ -83,7 +80,6 @@ export class View {
     };
   }
 
-  // ---------- отрисовка ----------
   renderSummary(summary) {
     this.doc.getElementById('sum-income').textContent = summary.income;
     this.doc.getElementById('sum-expense').textContent = summary.expense;
@@ -117,7 +113,7 @@ export class View {
 
   createCell(text, className = '', colSpan = 1) {
     const cell = this.doc.createElement('td');
-    cell.textContent = text; // textContent, чтобы в комментарий нельзя было вставить HTML
+    cell.textContent = text;
     cell.className = className;
     cell.colSpan = colSpan;
     return cell;
@@ -140,7 +136,6 @@ export class View {
     return button;
   }
 
-  // Заполняет выпадающий список.
   fillSelect(select, items, selectedValue, emptyLabel = '') {
     select.replaceChildren();
 
@@ -173,7 +168,6 @@ export class View {
     this.root.dataset.theme = theme;
   }
 
-  // ---------- режимы формы ----------
   fillFormForEdit(transaction) {
     const f = this.form.elements;
     f.transactionId.value = transaction.id;
@@ -203,7 +197,6 @@ export class View {
     this.clearErrors(this.categoryForm);
   }
 
-  // ---------- ошибки ----------
   showErrors(form, errors) {
     this.clearErrors(form);
 
